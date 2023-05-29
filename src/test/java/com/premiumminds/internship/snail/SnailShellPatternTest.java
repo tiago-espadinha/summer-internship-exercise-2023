@@ -1,6 +1,6 @@
 package com.premiumminds.internship.snail;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertArrayEquals;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
@@ -32,6 +32,6 @@ public class SnailShellPatternTest {
     Future<int[]> count = new SnailShellPattern().getSnailShell(matrix);
     int[] result = count.get(10, TimeUnit.SECONDS);
     int[] expected = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-    assertEquals(result, expected);
+    assertArrayEquals(result, expected);
   }
 }
