@@ -33,31 +33,27 @@ class SnailShellPattern implements ISnailShellPattern {
 
     // Add the values to the result array while the bounds do not cross each other
     while(left_bound <= right_bound && top_bound <= bottom_bound){
-      // Add the values of the top row inside the vertical bounds (from left to right)
+      // Add the values of the top row inside the horizontal bounds (from left to right)
       for (int i = left_bound; i <= right_bound; i++){
-        result[result_index] = matrix[top_bound][i];
-        result_index++;
+        result[result_index++] = matrix[top_bound][i];
       }
       top_bound++; // Update the top bound
 
-      // Add the values of the right column inside the horizontal bounds (from top to bottom)
+      // Add the values of the right column inside the vertical bounds (from top to bottom)
       for (int i = top_bound; i <= bottom_bound; i++){
-        result[result_index] = matrix[i][right_bound];
-        result_index++;
+        result[result_index++] = matrix[i][right_bound];
       }
       right_bound--; // Update the right bound
 
-      // Add the values of the bottom row inside the vertical bounds (from right to left)
+      // Add the values of the bottom row inside the horizontal bounds (from right to left)
       for (int i = right_bound; i >= left_bound; i--){
-        result[result_index] = matrix[bottom_bound][i];
-        result_index++;
+        result[result_index++] = matrix[bottom_bound][i];
       }
       bottom_bound--; // Update the bottom bound
 
-      // Add the values of the left column inside the horizontal bounds (from bottom to top)
+      // Add the values of the left column inside the vertical bounds (from bottom to top)
       for (int i = bottom_bound; i >= top_bound; i--){
-        result[result_index] = matrix[i][left_bound];
-        result_index++;
+        result[result_index++] = matrix[i][left_bound];
       }
       left_bound++; // Update the left bound
 
